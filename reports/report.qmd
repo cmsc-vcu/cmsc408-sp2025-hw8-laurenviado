@@ -114,9 +114,7 @@ DROP TABLE IF EXISTS wdi_country;
 CREATE TABLE wdi_country AS
 SELECT *
 FROM world_bank_data.wdi_country
-WHERE LENGTH(`Country Code`) = 3 
-  AND `Region` IS NOT NULL 
-  AND `Income Group` IS NOT NULL;
+WHERE `Table Name` = `Short Name`;
 """)
 
 # count new rows 
@@ -267,15 +265,10 @@ ORDER BY `Country Count` DESC;
 ## in the first column.
 
 run_sql_and_return_html(cnx,"""
-SELECT 
-  `Short Name` AS "Country", 
-  `Income Group`
-FROM 
-  wdi_country
-WHERE 
-  `Short Name` = 'Venezuela'
-ORDER BY 
-  `Short Name`;
+SELECT `Short Name`
+FROM wdi_country
+WHERE `Income Group` IS NULL
+ORDER BY `Short Name`;
 """)
 
 ```
@@ -289,13 +282,15 @@ ORDER BY
 ## NOTE - if you get this wrong, all subsequent tables will be wrong!
 
 execute_ddl(cnx,"""
--- Fix Venezuela's missing income group classification
+-- Fix Venezuela's missing Income Group
 UPDATE wdi_country
-SET `Income Group` = 'High income'
+SET `Income Group` = 'Upper middle income'
 WHERE `Short Name` = 'Venezuela';
+""")
 
--- Verify the fix
-SELECT `Short Name`, `Income Group`
+run_sql_and_return_html(cnx,"""
+-- Show verification with 3 columns
+SELECT `Short Name`, `Region`, `Income Group`
 FROM wdi_country
 WHERE `Short Name` = 'Venezuela';
 """)
@@ -342,22 +337,33 @@ ORDER BY
 ## (skills: select, aggregate, group by, nested query)
 
 run_sql_and_return_html(cnx,"""
+WITH counts AS (
+  SELECT 
+    `Region`, 
+    `Income Group`, 
+    COUNT(*) AS count
+  FROM wdi_country
+  GROUP BY `Region`, `Income Group`
+),
+totals AS (
+  SELECT 
+    `Region`, 
+    SUM(count) AS total
+  FROM counts
+  GROUP BY `Region`
+)
 SELECT 
-  `Region`,
-  SUM(CASE WHEN `Income Group` = 'High income' THEN 1 ELSE 0 END) AS High_Income,
-  SUM(CASE WHEN `Income Group` = 'Upper middle income' THEN 1 ELSE 0 END) AS Upper_Middle,
-  SUM(CASE WHEN `Income Group` = 'Lower middle income' THEN 1 ELSE 0 END) AS Lower_Middle,
-  SUM(CASE WHEN `Income Group` = 'Low income' THEN 1 ELSE 0 END) AS Low_Income,
-  SUM(CASE WHEN `Income Group` NOT IN ('High income', 'Upper middle income', 'Lower middle income', 'Low income') THEN 1 ELSE 0 END) AS Other,
-  COUNT(*) AS Total
-FROM 
-  wdi_country
-WHERE 
-  `Region` IS NOT NULL AND `Income Group` IS NOT NULL
-GROUP BY 
-  `Region`
-ORDER BY 
-  `Region`;
+  c.`Region`,
+  ROUND(SUM(CASE WHEN c.`Income Group` = 'High income' THEN c.count ELSE 0 END), 1) AS High_Income,
+  ROUND(SUM(CASE WHEN c.`Income Group` = 'Upper middle income' THEN c.count ELSE 0 END), 1) AS Upper_Middle,
+  ROUND(SUM(CASE WHEN c.`Income Group` = 'Lower middle income' THEN c.count ELSE 0 END), 1) AS Lower_Middle,
+  ROUND(SUM(CASE WHEN c.`Income Group` = 'Low income' THEN c.count ELSE 0 END), 1) AS Low_Income,
+  ROUND(SUM(CASE WHEN c.`Income Group` NOT IN ('High income', 'Upper middle income', 'Lower middle income', 'Low income') OR c.`Income Group` IS NULL THEN c.count ELSE 0 END), 1) AS Other,
+  ROUND(t.total, 1) AS Total
+FROM counts c
+JOIN totals t ON c.`Region` = t.`Region`
+GROUP BY c.`Region`, t.total
+ORDER BY c.`Region`;
 """)
 
 ```
@@ -447,8 +453,8 @@ ORDER BY
 ## (skills: select, where, subqueries, joins)
 
 run_sql_and_return_html(cnx,"""
--- Step 1: Get all valid combinations (region × income group)
-WITH all_combinations AS (
+-- Task 18: Show missing region/income pairs
+WITH all_pairs AS (
   SELECT 
     r.`Region`, 
     i.`Income Group`
@@ -457,9 +463,7 @@ WITH all_combinations AS (
   CROSS JOIN 
     (SELECT DISTINCT `Income Group` FROM wdi_country WHERE `Income Group` IS NOT NULL) i
 ),
-
--- Step 2: Get actual combinations from data
-existing_combinations AS (
+existing_pairs AS (
   SELECT DISTINCT 
     `Region`, 
     `Income Group`
@@ -468,15 +472,14 @@ existing_combinations AS (
   WHERE 
     `Region` IS NOT NULL AND `Income Group` IS NOT NULL
 )
-
--- Step 3: Find missing ones
 SELECT 
   a.`Region`, 
-  a.`Income Group`
+  a.`Income Group`,
+  1 AS `Missing`
 FROM 
-  all_combinations a
+  all_pairs a
 LEFT JOIN 
-  existing_combinations e
+  existing_pairs e
   ON a.`Region` = e.`Region` AND a.`Income Group` = e.`Income Group`
 WHERE 
   e.`Region` IS NULL
