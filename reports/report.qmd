@@ -108,13 +108,13 @@ Create your own copy of WDI_Country containing just countries.
 ## (skills: select, aggregate)
 
 # drop table
-execute_ddl(cnx,"""
+execute_ddl(cnx, """
 DROP TABLE IF EXISTS wdi_country;
 
 CREATE TABLE wdi_country AS
 SELECT *
 FROM world_bank_data.wdi_country
-WHERE `Table Name` = `Short Name`;
+WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL;
 """)
 
 # count new rows 
@@ -132,11 +132,15 @@ According to the World Bank, in 2020 there were how many countries in the world?
 ```{python}
 ## (skills: select, aggregate)
 
-run_sql_and_return_html(cnx,"""
-SELECT COUNT(DISTINCT d.`Country Code`) AS "Countries in 2020"
-FROM world_bank_data.wdi_data d
-JOIN wdi_country c ON d.`Country Code` = c.`Country Code`
-WHERE d.`2020` IS NOT NULL;
+run_sql_and_return_html(cnx, """
+SELECT COUNT(DISTINCT `Country Code`) AS "Countries in 2020"
+FROM world_bank_data.wdi_data
+WHERE `2020` IS NOT NULL
+  AND `Country Code` IN (
+    SELECT `Country Code`
+    FROM world_bank_data.wdi_country
+    WHERE `Region` IS NOT NULL
+  );
 """)
 
 ```
@@ -264,10 +268,14 @@ ORDER BY `Country Count` DESC;
 ## you will be scored on the number of records returned and the value(s) 
 ## in the first column.
 
-run_sql_and_return_html(cnx,"""
-SELECT `Short Name`
-FROM wdi_country
-WHERE `Income Group` IS NULL
+run_sql_and_return_html(cnx, """
+SELECT 
+  `Short Name`, 
+  `Country Code`, 
+  `Income Group`
+FROM world_bank_data.wdi_country
+WHERE `Income Group` IS NULL 
+  AND `Region` IS NOT NULL
 ORDER BY `Short Name`;
 """)
 
@@ -281,19 +289,22 @@ ORDER BY `Short Name`;
 ## Write an update comment to correct the issue.
 ## NOTE - if you get this wrong, all subsequent tables will be wrong!
 
-execute_ddl(cnx,"""
--- Fix Venezuela's missing Income Group
+run_sql_and_return_html(cnx, """
 UPDATE wdi_country
-SET `Income Group` = 'Upper middle income'
-WHERE `Short Name` = 'Venezuela';
+SET `Income Group` = 'High income'
+WHERE `Country Code` = 'VEN';
+COMMIT;
 """)
 
-run_sql_and_return_html(cnx,"""
--- Show verification with 3 columns
-SELECT `Short Name`, `Region`, `Income Group`
+run_sql_and_return_html(cnx, """
+SELECT 
+  `Short Name`, 
+  `Country Code`, 
+  `Income Group`
 FROM wdi_country
 WHERE `Short Name` = 'Venezuela';
 """)
+
 ```
 
 ## Task 14
@@ -336,13 +347,14 @@ ORDER BY
 ## and a column for the row totals.
 ## (skills: select, aggregate, group by, nested query)
 
-run_sql_and_return_html(cnx,"""
+run_sql_and_return_html(cnx, """
 WITH counts AS (
   SELECT 
     `Region`, 
     `Income Group`, 
     COUNT(*) AS count
   FROM wdi_country
+  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
   GROUP BY `Region`, `Income Group`
 ),
 totals AS (
@@ -354,12 +366,11 @@ totals AS (
 )
 SELECT 
   c.`Region`,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'High income' THEN c.count ELSE 0 END), 1) AS High_Income,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'Upper middle income' THEN c.count ELSE 0 END), 1) AS Upper_Middle,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'Lower middle income' THEN c.count ELSE 0 END), 1) AS Lower_Middle,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'Low income' THEN c.count ELSE 0 END), 1) AS Low_Income,
-  ROUND(SUM(CASE WHEN c.`Income Group` NOT IN ('High income', 'Upper middle income', 'Lower middle income', 'Low income') OR c.`Income Group` IS NULL THEN c.count ELSE 0 END), 1) AS Other,
-  ROUND(t.total, 1) AS Total
+  SUM(CASE WHEN c.`Income Group` = 'High income' THEN c.count ELSE 0 END) AS High_Income,
+  SUM(CASE WHEN c.`Income Group` = 'Upper middle income' THEN c.count ELSE 0 END) AS Upper_Middle,
+  SUM(CASE WHEN c.`Income Group` = 'Lower middle income' THEN c.count ELSE 0 END) AS Lower_Middle,
+  SUM(CASE WHEN c.`Income Group` = 'Low income' THEN c.count ELSE 0 END) AS Low_Income,
+  t.total AS Total
 FROM counts c
 JOIN totals t ON c.`Region` = t.`Region`
 GROUP BY c.`Region`, t.total
@@ -507,18 +518,27 @@ ORDER BY
 ## slam dunk after this!
 ## (skills: select, where, subqueries, joins, aggregate functions)
 
-run_sql_and_return_html(cnx,"""
+run_sql_and_return_html(cnx, """
 WITH counts AS (
-  SELECT 
-    `Region`, 
-    `Income Group`, 
-    COUNT(*) AS country_count
+  SELECT `Region`, `Income Group`, COUNT(*) AS country_count
   FROM wdi_country
   WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
   GROUP BY `Region`, `Income Group`
 ),
-totals AS (
-  SELECT COUNT(*) AS total_count
+region_totals AS (
+  SELECT `Region`, COUNT(*) AS region_total
+  FROM wdi_country
+  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
+  GROUP BY `Region`
+),
+income_totals AS (
+  SELECT `Income Group`, COUNT(*) AS income_total
+  FROM wdi_country
+  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
+  GROUP BY `Income Group`
+),
+overall_total AS (
+  SELECT COUNT(*) AS overall_total
   FROM wdi_country
   WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
 )
@@ -526,8 +546,14 @@ SELECT
   c.`Region`, 
   c.`Income Group`, 
   c.country_count,
-  ROUND(c.country_count * 100.0 / t.total_count, 2) AS percent_of_total
-FROM counts c, totals t
+  r.region_total,
+  i.income_total,
+  o.overall_total,
+  ROUND((c.country_count / o.overall_total) * 100, 2) AS percent_of_total
+FROM counts c
+JOIN region_totals r ON c.`Region` = r.`Region`
+JOIN income_totals i ON c.`Income Group` = i.`Income Group`
+JOIN overall_total o
 ORDER BY c.`Region`, c.`Income Group`;
 """)
 
@@ -585,28 +611,26 @@ ORDER BY
 
 ## (This is much simpler than task 20!)
 
-run_sql_and_return_html(cnx,"""
-WITH group_counts AS (
-  SELECT 
-    `Income Group`, 
-    COUNT(*) AS country_count
+run_sql_and_return_html(cnx, """
+WITH income_totals AS (
+  SELECT `Income Group`, COUNT(*) AS country_count
   FROM wdi_country
   WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
   GROUP BY `Income Group`
 ),
-total_count AS (
-  SELECT COUNT(*) AS total
+overall_total AS (
+  SELECT COUNT(*) AS overall_total
   FROM wdi_country
   WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
 )
 SELECT 
-  g.`Income Group`,
-  g.country_count,
-  t.total,
-  ROUND(g.country_count * 100.0 / t.total, 2) AS percent_of_total
-FROM 
-  group_counts g, total_count t
-ORDER BY g.country_count DESC;
+  i.`Income Group`, 
+  i.country_count, 
+  o.overall_total,
+  ROUND((i.country_count / o.overall_total) * 100, 2) AS percent_of_total
+FROM income_totals i
+JOIN overall_total o
+ORDER BY i.`Income Group`;
 """)
 
 ```
