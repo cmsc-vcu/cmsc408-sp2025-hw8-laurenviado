@@ -538,30 +538,37 @@ ORDER BY c.`Region`, c.`Income Group`;
 ## columns, Region in the rows and Percent of total in each cell of the table.
 
 run_sql_and_return_html(cnx,"""
-WITH counts AS (
+WITH base AS (
   SELECT 
     `Region`, 
     `Income Group`, 
-    COUNT(*) AS country_count
+    COUNT(*) AS count
   FROM wdi_country
   WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
   GROUP BY `Region`, `Income Group`
 ),
 totals AS (
-  SELECT COUNT(*) AS total
-  FROM wdi_country
-  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL
+  SELECT 
+    `Region`, 
+    SUM(count) AS total
+  FROM base
+  GROUP BY `Region`
 )
 SELECT 
-  c.`Region`,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'High income' THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS High_Income,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'Upper middle income' THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Upper_Middle,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'Lower middle income' THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Lower_Middle,
-  ROUND(SUM(CASE WHEN c.`Income Group` = 'Low income' THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Low_Income,
-  ROUND(SUM(CASE WHEN c.`Income Group` NOT IN ('High income', 'Upper middle income', 'Lower middle income', 'Low income') THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Other
-FROM counts c, totals t
-GROUP BY c.`Region`
-ORDER BY c.`Region`;
+  b.`Region`,
+  ROUND(SUM(CASE WHEN b.`Income Group` = 'High income' THEN b.count ELSE 0 END) * 100.0 / t.total, 2) AS High_Income,
+  ROUND(SUM(CASE WHEN b.`Income Group` = 'Upper middle income' THEN b.count ELSE 0 END) * 100.0 / t.total, 2) AS Upper_Middle,
+  ROUND(SUM(CASE WHEN b.`Income Group` = 'Lower middle income' THEN b.count ELSE 0 END) * 100.0 / t.total, 2) AS Lower_Middle,
+  ROUND(SUM(CASE WHEN b.`Income Group` = 'Low income' THEN b.count ELSE 0 END) * 100.0 / t.total, 2) AS Low_Income,
+  ROUND(SUM(CASE WHEN b.`Income Group` NOT IN ('High income', 'Upper middle income', 'Lower middle income', 'Low income') THEN b.count ELSE 0 END) * 100.0 / t.total, 2) AS Other
+FROM 
+  base b
+JOIN 
+  totals t ON b.`Region` = t.`Region`
+GROUP BY 
+  b.`Region`
+ORDER BY 
+  b.`Region`;
 """)
 
 ```
