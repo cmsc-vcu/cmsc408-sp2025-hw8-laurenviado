@@ -3156,7 +3156,7 @@ vertical-align: -.125em;
 <p>GITHUB URL: <a href="https://github.com/cmsc-vcu/cmsc408-sp2025-hw8-laurenviado#" class="uri">https://github.com/cmsc-vcu/cmsc408-sp2025-hw8-laurenviado#</a></p>
 <section id="problem-background" class="level1">
 <h1>Problem Background</h1>
-<div id="18d033c1" class="cell" data-execution_count="1">
+<div id="00fab3f4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> helpers <span class="im">import</span> create_database_engine, run_sql_and_return_df, run_sql_and_return_html, create_db_wrapper, execute_ddl_from_file, execute_ddl</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load these variables from .env file.</span></span>
@@ -3169,7 +3169,7 @@ vertical-align: -.125em;
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>cnx,config <span class="op">=</span> create_db_wrapper( config_map )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="dac42fa4" class="cell" data-execution_count="2">
+<div id="a5399e9f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do a quick test of the connection and trap the errors better!</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
@@ -3270,7 +3270,7 @@ Total Rows: 3, Total Columns: 3
 <section id="task-1" class="level2">
 <h2 class="anchored" data-anchor-id="task-1">Task 1</h2>
 <p>How many records are in the country table?</p>
-<div id="aea9d41a" class="cell" data-execution_count="3">
+<div id="be363844" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">select</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">  count(*) as &quot;Row Count&quot;</span></span>
@@ -3316,7 +3316,7 @@ Total Rows: 1, Total Columns: 1
 <section id="task-2" class="level2">
 <h2 class="anchored" data-anchor-id="task-2">Task 2</h2>
 <p>Explore the first 5 records in the country table.</p>
-<div id="db7daa92" class="cell" data-execution_count="4">
+<div id="ad7ce394" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">select</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">  *</span></span>
@@ -4115,16 +4115,16 @@ Total Rows: 5, Total Columns: 31
 <section id="task-3" class="level2">
 <h2 class="anchored" data-anchor-id="task-3">Task 3</h2>
 <p>List all non-countries.</p>
-<div id="651f7cce" class="cell" data-execution_count="5">
+<div id="9cf15638" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## task 3</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Which records are NOT for countries, that is they&#39;re for regions or groups of countries.</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">## How can you tell?</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">## How can you tell? </span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Once you figure it out, write a query to list all the non-countries</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where)</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">  `Short Name`, `Region`, `Income Group`</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">  `Short Name`</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">  world_bank_data.wdi_country</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE </span></span>
@@ -4142,14 +4142,6 @@ Total Rows: 5, Total Columns: 31
 Short Name
 </th>
 
-<th>
-Region
-</th>
-
-<th>
-Income Group
-</th>
-
 </tr>
 
 </thead>
@@ -4162,28 +4154,12 @@ Income Group
 Africa Eastern and Southern
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Africa Western and Central
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4194,28 +4170,12 @@ NULL
 Arab World
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Caribbean small states
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4226,28 +4186,12 @@ NULL
 Central Europe and the Baltics
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Early-demographic dividend
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4258,28 +4202,12 @@ NULL
 East Asia &amp; Pacific
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 East Asia &amp; Pacific (excluding high income)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4290,28 +4218,12 @@ NULL
 East Asia &amp; Pacific (IDA &amp; IBRD)
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Euro area
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4322,28 +4234,12 @@ NULL
 Europe &amp; Central Asia
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Europe &amp; Central Asia (excluding high income)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4354,28 +4250,12 @@ NULL
 Europe &amp; Central Asia (IDA &amp; IBRD)
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 European Union
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4386,28 +4266,12 @@ NULL
 Fragile and conflict affected situations
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Heavily indebted poor countries (HIPC)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4418,28 +4282,12 @@ NULL
 High income
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 IBRD only
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4450,28 +4298,12 @@ NULL
 IDA &amp; IBRD total
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 IDA blend
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4482,28 +4314,12 @@ NULL
 IDA only
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 IDA total
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4514,28 +4330,12 @@ NULL
 Late-demographic dividend
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Latin America &amp; Caribbean
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4546,28 +4346,12 @@ NULL
 Latin America &amp; Caribbean (excluding high income)
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Latin America &amp; Caribbean (IDA &amp; IBRD)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4578,28 +4362,12 @@ NULL
 Least developed countries: UN classification
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Low &amp; middle income
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4610,28 +4378,12 @@ NULL
 Low income
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Lower middle income
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4642,28 +4394,12 @@ NULL
 Middle East &amp; North Africa
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Middle East &amp; North Africa (excluding high income)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4674,28 +4410,12 @@ NULL
 Middle East &amp; North Africa (IDA &amp; IBRD)
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Middle income
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4706,28 +4426,12 @@ NULL
 North America
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 OECD members
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4738,28 +4442,12 @@ NULL
 Other small states
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Pacific island small states
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4770,28 +4458,12 @@ NULL
 Post-demographic dividend
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Pre-demographic dividend
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4802,28 +4474,12 @@ NULL
 Small states
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 South Asia
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4834,28 +4490,12 @@ NULL
 South Asia (IDA &amp; IBRD)
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Sub-Saharan Africa
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4866,28 +4506,12 @@ NULL
 Sub-Saharan Africa (excluding high income)
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
 
 <td>
 Sub-Saharan Africa (IDA &amp; IBRD)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -4898,14 +4522,6 @@ NULL
 Upper middle income
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
@@ -4914,19 +4530,11 @@ NULL
 World
 </td>
 
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-<td colspan="3" style="text-align: left;">
-Total Rows: 48, Total Columns: 3
+<td colspan="1" style="text-align: left;">
+Total Rows: 48, Total Columns: 1
 </td>
 </tr>
 </tbody>
@@ -4938,7 +4546,7 @@ Total Rows: 48, Total Columns: 3
 <section id="task-4" class="level2">
 <h2 class="anchored" data-anchor-id="task-4">Task 4</h2>
 <p>Create your own copy of WDI_Country containing just countries.</p>
-<div id="b9bac313" class="cell" data-execution_count="6">
+<div id="fe292b7b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## task 4</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">## The WDI table clearly contains information for countries and non-countries</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">## using CREATE TABLE ... SELECT from WHERE syntax.</span></span>
@@ -4953,14 +4561,16 @@ Total Rows: 48, Total Columns: 3
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE wdi_country AS</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT *</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">FROM world_bank_data.wdi_country</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL;</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># get row count</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT COUNT(*) AS &quot;Number of Countries&quot;</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="st">FROM wdi_country;</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE LENGTH(`Country Code`) = 3 </span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="st">  AND `Region` IS NOT NULL </span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="st">  AND `Income Group` IS NOT NULL;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># count new rows </span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT COUNT(*) AS &quot;Number of Countries&quot;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="st">FROM wdi_country;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <table class="dataframe table table-sm table-striped small">
 
@@ -5000,14 +4610,15 @@ Total Rows: 1, Total Columns: 1
 <section id="task-5" class="level2">
 <h2 class="anchored" data-anchor-id="task-5">Task 5</h2>
 <p>According to the World Bank, in 2020 there were how many countries in the world?</p>
-<div id="9fa4acc1" class="cell" data-execution_count="7">
+<div id="e7e10e96" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, aggregate)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT COUNT(DISTINCT `Country Code`) AS &quot;Countries in 2020&quot;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">FROM world_bank_data.wdi_data</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `2020` IS NOT NULL;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT COUNT(DISTINCT d.`Country Code`) AS &quot;Countries in 2020&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">FROM world_bank_data.wdi_data d</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">JOIN wdi_country c ON d.`Country Code` = c.`Country Code`</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE d.`2020` IS NOT NULL;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <table class="dataframe table table-sm table-striped small">
 
@@ -5047,7 +4658,7 @@ Total Rows: 1, Total Columns: 1
 <section id="task-6" class="level2">
 <h2 class="anchored" data-anchor-id="task-6">Task 6</h2>
 <p>What are all unique values of region in the wdi_country table?</p>
-<div id="741bb0d5" class="cell" data-execution_count="8">
+<div id="0cb622ed" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Let&#39;s investigate the country_region field.</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">## What is the domain of the country_region field? That is,</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">## what are the unique values found there?</span></span>
@@ -5057,8 +4668,9 @@ Total Rows: 1, Total Columns: 1
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT DISTINCT `Region`</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="st">FROM wdi_country</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY `Region`;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Region` IS NOT NULL</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY `Region`;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <table class="dataframe table table-sm table-striped small">
 
@@ -5075,14 +4687,6 @@ Region
 </thead>
 
 <tbody>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-</tr>
 
 <tr>
 
@@ -5142,7 +4746,7 @@ Sub-Saharan Africa
 
 <tr>
 <td colspan="1" style="text-align: left;">
-Total Rows: 8, Total Columns: 1
+Total Rows: 7, Total Columns: 1
 </td>
 </tr>
 </tbody>
@@ -5154,16 +4758,17 @@ Total Rows: 8, Total Columns: 1
 <section id="task-7" class="level2">
 <h2 class="anchored" data-anchor-id="task-7">Task 7</h2>
 <p>How many countries are in each region?</p>
-<div id="bc841317" class="cell" data-execution_count="9">
+<div id="668f12ec" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## How many countries are in each region?</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, aggregate, group by, order by)</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT `Region`, COUNT(*) AS &quot;Country Count&quot;</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="st">FROM wdi_country</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY `Region`</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY `Country Count` DESC;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Region` IS NOT NULL</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY `Region`</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY `Country Count` DESC;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <table class="dataframe table table-sm table-striped small">
 
@@ -5193,18 +4798,6 @@ Europe &amp; Central Asia
 
 <td>
 58
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-48
 </td>
 
 </tr>
@@ -5283,7 +4876,7 @@ North America
 
 <tr>
 <td colspan="2" style="text-align: left;">
-Total Rows: 8, Total Columns: 2
+Total Rows: 7, Total Columns: 2
 </td>
 </tr>
 </tbody>
@@ -5295,7 +4888,7 @@ Total Rows: 8, Total Columns: 2
 <section id="task-8" class="level2">
 <h2 class="anchored" data-anchor-id="task-8">Task 8</h2>
 <p>List the country full names and regions for all countries in north america.</p>
-<div id="3d0a40b2" class="cell" data-execution_count="10">
+<div id="0ccfbc8d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## List the country full names and regions for all countries in north america</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where, order by)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5375,7 +4968,7 @@ Total Rows: 3, Total Columns: 2
 </section>
 <section id="task-9" class="level2">
 <h2 class="anchored" data-anchor-id="task-9">Task 9</h2>
-<div id="bc430724" class="cell" data-execution_count="11">
+<div id="892ba2e7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">## The last World Cup soccer tournament was hosted by Qatar.</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">## What region contains Qatar?  List the region, country short name and full name</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where)</span></span>
@@ -5439,7 +5032,7 @@ Total Rows: 1, Total Columns: 3
 </section>
 <section id="task-10" class="level2">
 <h2 class="anchored" data-anchor-id="task-10">Task 10</h2>
-<div id="2b9323c4" class="cell" data-execution_count="12">
+<div id="e4ec3e93" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## There are two abbreviation fields in the data country_abbr and country_wb_abbr.</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">## List the country code, short name, abbr, wb_abbr and region for all the countries</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">## where the abbr and wb_abbr are different.</span></span>
@@ -5447,13 +5040,20 @@ Total Rows: 1, Total Columns: 3
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="st">  `Country Code`, `Short Name`, `Country Code`, `WB-2 Code`, `Region`</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="st">  wdi_country</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE </span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="st">  `Country Code` &lt;&gt; `WB-2 Code`</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY `Short Name`;</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="st">  `Country Code`, </span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="st">  `Short Name`, </span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="st">  `2-alpha code` AS Abbr, </span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="st">  `WB-2 Code` AS WB_Abbr, </span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="st">  wdi_country</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE </span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="st">  `2-alpha code` IS NOT NULL AND </span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="st">  `WB-2 Code` IS NOT NULL AND </span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="st">  `2-alpha code` &lt;&gt; `WB-2 Code`</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="st">  `Short Name`;</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <table class="dataframe table table-sm table-striped small">
 
@@ -5470,11 +5070,11 @@ Short Name
 </th>
 
 <th>
-Country Code
+Abbr
 </th>
 
 <th>
-WB-2 Code
+WB_Abbr
 </th>
 
 <th>
@@ -5490,1374 +5090,6 @@ Region
 <tr>
 
 <td>
-AFG
-</td>
-
-<td>
-Afghanistan
-</td>
-
-<td>
-AFG
-</td>
-
-<td>
-AF
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AFE
-</td>
-
-<td>
-Africa Eastern and Southern
-</td>
-
-<td>
-AFE
-</td>
-
-<td>
-ZH
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AFW
-</td>
-
-<td>
-Africa Western and Central
-</td>
-
-<td>
-AFW
-</td>
-
-<td>
-ZI
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ALB
-</td>
-
-<td>
-Albania
-</td>
-
-<td>
-ALB
-</td>
-
-<td>
-AL
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DZA
-</td>
-
-<td>
-Algeria
-</td>
-
-<td>
-DZA
-</td>
-
-<td>
-DZ
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ASM
-</td>
-
-<td>
-American Samoa
-</td>
-
-<td>
-ASM
-</td>
-
-<td>
-AS
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AND
-</td>
-
-<td>
-Andorra
-</td>
-
-<td>
-AND
-</td>
-
-<td>
-AD
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AGO
-</td>
-
-<td>
-Angola
-</td>
-
-<td>
-AGO
-</td>
-
-<td>
-AO
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ATG
-</td>
-
-<td>
-Antigua and Barbuda
-</td>
-
-<td>
-ATG
-</td>
-
-<td>
-AG
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ARB
-</td>
-
-<td>
-Arab World
-</td>
-
-<td>
-ARB
-</td>
-
-<td>
-1A
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ARG
-</td>
-
-<td>
-Argentina
-</td>
-
-<td>
-ARG
-</td>
-
-<td>
-AR
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ARM
-</td>
-
-<td>
-Armenia
-</td>
-
-<td>
-ARM
-</td>
-
-<td>
-AM
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ABW
-</td>
-
-<td>
-Aruba
-</td>
-
-<td>
-ABW
-</td>
-
-<td>
-AW
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AUS
-</td>
-
-<td>
-Australia
-</td>
-
-<td>
-AUS
-</td>
-
-<td>
-AU
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AUT
-</td>
-
-<td>
-Austria
-</td>
-
-<td>
-AUT
-</td>
-
-<td>
-AT
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AZE
-</td>
-
-<td>
-Azerbaijan
-</td>
-
-<td>
-AZE
-</td>
-
-<td>
-AZ
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BHR
-</td>
-
-<td>
-Bahrain
-</td>
-
-<td>
-BHR
-</td>
-
-<td>
-BH
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BGD
-</td>
-
-<td>
-Bangladesh
-</td>
-
-<td>
-BGD
-</td>
-
-<td>
-BD
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BRB
-</td>
-
-<td>
-Barbados
-</td>
-
-<td>
-BRB
-</td>
-
-<td>
-BB
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BLR
-</td>
-
-<td>
-Belarus
-</td>
-
-<td>
-BLR
-</td>
-
-<td>
-BY
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BEL
-</td>
-
-<td>
-Belgium
-</td>
-
-<td>
-BEL
-</td>
-
-<td>
-BE
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BLZ
-</td>
-
-<td>
-Belize
-</td>
-
-<td>
-BLZ
-</td>
-
-<td>
-BZ
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BEN
-</td>
-
-<td>
-Benin
-</td>
-
-<td>
-BEN
-</td>
-
-<td>
-BJ
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BMU
-</td>
-
-<td>
-Bermuda
-</td>
-
-<td>
-BMU
-</td>
-
-<td>
-BM
-</td>
-
-<td>
-North America
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BTN
-</td>
-
-<td>
-Bhutan
-</td>
-
-<td>
-BTN
-</td>
-
-<td>
-BT
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BOL
-</td>
-
-<td>
-Bolivia
-</td>
-
-<td>
-BOL
-</td>
-
-<td>
-BO
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BIH
-</td>
-
-<td>
-Bosnia and Herzegovina
-</td>
-
-<td>
-BIH
-</td>
-
-<td>
-BA
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BWA
-</td>
-
-<td>
-Botswana
-</td>
-
-<td>
-BWA
-</td>
-
-<td>
-BW
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BRA
-</td>
-
-<td>
-Brazil
-</td>
-
-<td>
-BRA
-</td>
-
-<td>
-BR
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-VGB
-</td>
-
-<td>
-British Virgin Islands
-</td>
-
-<td>
-VGB
-</td>
-
-<td>
-VG
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BRN
-</td>
-
-<td>
-Brunei
-</td>
-
-<td>
-BRN
-</td>
-
-<td>
-BN
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BGR
-</td>
-
-<td>
-Bulgaria
-</td>
-
-<td>
-BGR
-</td>
-
-<td>
-BG
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BFA
-</td>
-
-<td>
-Burkina Faso
-</td>
-
-<td>
-BFA
-</td>
-
-<td>
-BF
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BDI
-</td>
-
-<td>
-Burundi
-</td>
-
-<td>
-BDI
-</td>
-
-<td>
-BI
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CPV
-</td>
-
-<td>
-Cabo Verde
-</td>
-
-<td>
-CPV
-</td>
-
-<td>
-CV
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KHM
-</td>
-
-<td>
-Cambodia
-</td>
-
-<td>
-KHM
-</td>
-
-<td>
-KH
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CMR
-</td>
-
-<td>
-Cameroon
-</td>
-
-<td>
-CMR
-</td>
-
-<td>
-CM
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CAN
-</td>
-
-<td>
-Canada
-</td>
-
-<td>
-CAN
-</td>
-
-<td>
-CA
-</td>
-
-<td>
-North America
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CSS
-</td>
-
-<td>
-Caribbean small states
-</td>
-
-<td>
-CSS
-</td>
-
-<td>
-S3
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CYM
-</td>
-
-<td>
-Cayman Islands
-</td>
-
-<td>
-CYM
-</td>
-
-<td>
-KY
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CAF
-</td>
-
-<td>
-Central African Republic
-</td>
-
-<td>
-CAF
-</td>
-
-<td>
-CF
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CEB
-</td>
-
-<td>
-Central Europe and the Baltics
-</td>
-
-<td>
-CEB
-</td>
-
-<td>
-B8
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TCD
-</td>
-
-<td>
-Chad
-</td>
-
-<td>
-TCD
-</td>
-
-<td>
-TD
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CHI
-</td>
-
-<td>
-Channel Islands
-</td>
-
-<td>
-CHI
-</td>
-
-<td>
-JG
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CHL
-</td>
-
-<td>
-Chile
-</td>
-
-<td>
-CHL
-</td>
-
-<td>
-CL
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CHN
-</td>
-
-<td>
-China
-</td>
-
-<td>
-CHN
-</td>
-
-<td>
-CN
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-COL
-</td>
-
-<td>
-Colombia
-</td>
-
-<td>
-COL
-</td>
-
-<td>
-CO
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-COM
-</td>
-
-<td>
-Comoros
-</td>
-
-<td>
-COM
-</td>
-
-<td>
-KM
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-COG
-</td>
-
-<td>
-Congo
-</td>
-
-<td>
-COG
-</td>
-
-<td>
-CG
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CRI
-</td>
-
-<td>
-Costa Rica
-</td>
-
-<td>
-CRI
-</td>
-
-<td>
-CR
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CIV
-</td>
-
-<td>
-Côte d&#39;Ivoire
-</td>
-
-<td>
-CIV
-</td>
-
-<td>
-CI
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-HRV
-</td>
-
-<td>
-Croatia
-</td>
-
-<td>
-HRV
-</td>
-
-<td>
-HR
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CUB
-</td>
-
-<td>
-Cuba
-</td>
-
-<td>
-CUB
-</td>
-
-<td>
-CU
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CUW
-</td>
-
-<td>
-Curaçao
-</td>
-
-<td>
-CUW
-</td>
-
-<td>
-CW
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CYP
-</td>
-
-<td>
-Cyprus
-</td>
-
-<td>
-CYP
-</td>
-
-<td>
-CY
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CZE
-</td>
-
-<td>
-Czechia
-</td>
-
-<td>
-CZE
-</td>
-
-<td>
-CZ
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PRK
-</td>
-
-<td>
-Dem. People&#39;s Rep. Korea
-</td>
-
-<td>
-PRK
-</td>
-
-<td>
-KP
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 COD
 </td>
 
@@ -6866,3539 +5098,11 @@ Dem. Rep. Congo
 </td>
 
 <td>
-COD
+CD
 </td>
 
 <td>
 ZR
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DNK
-</td>
-
-<td>
-Denmark
-</td>
-
-<td>
-DNK
-</td>
-
-<td>
-DK
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DJI
-</td>
-
-<td>
-Djibouti
-</td>
-
-<td>
-DJI
-</td>
-
-<td>
-DJ
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DMA
-</td>
-
-<td>
-Dominica
-</td>
-
-<td>
-DMA
-</td>
-
-<td>
-DM
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DOM
-</td>
-
-<td>
-Dominican Republic
-</td>
-
-<td>
-DOM
-</td>
-
-<td>
-DO
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-EAR
-</td>
-
-<td>
-Early-demographic dividend
-</td>
-
-<td>
-EAR
-</td>
-
-<td>
-V2
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-EAS
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-EAS
-</td>
-
-<td>
-Z4
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-EAP
-</td>
-
-<td>
-East Asia &amp; Pacific (excluding high income)
-</td>
-
-<td>
-EAP
-</td>
-
-<td>
-4E
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TEA
-</td>
-
-<td>
-East Asia &amp; Pacific (IDA &amp; IBRD)
-</td>
-
-<td>
-TEA
-</td>
-
-<td>
-T4
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ECU
-</td>
-
-<td>
-Ecuador
-</td>
-
-<td>
-ECU
-</td>
-
-<td>
-EC
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-EGY
-</td>
-
-<td>
-Egypt
-</td>
-
-<td>
-EGY
-</td>
-
-<td>
-EG
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SLV
-</td>
-
-<td>
-El Salvador
-</td>
-
-<td>
-SLV
-</td>
-
-<td>
-SV
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GNQ
-</td>
-
-<td>
-Equatorial Guinea
-</td>
-
-<td>
-GNQ
-</td>
-
-<td>
-GQ
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ERI
-</td>
-
-<td>
-Eritrea
-</td>
-
-<td>
-ERI
-</td>
-
-<td>
-ER
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-EST
-</td>
-
-<td>
-Estonia
-</td>
-
-<td>
-EST
-</td>
-
-<td>
-EE
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SWZ
-</td>
-
-<td>
-Eswatini
-</td>
-
-<td>
-SWZ
-</td>
-
-<td>
-SZ
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ETH
-</td>
-
-<td>
-Ethiopia
-</td>
-
-<td>
-ETH
-</td>
-
-<td>
-ET
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-EMU
-</td>
-
-<td>
-Euro area
-</td>
-
-<td>
-EMU
-</td>
-
-<td>
-XC
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ECS
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-ECS
-</td>
-
-<td>
-Z7
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ECA
-</td>
-
-<td>
-Europe &amp; Central Asia (excluding high income)
-</td>
-
-<td>
-ECA
-</td>
-
-<td>
-7E
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TEC
-</td>
-
-<td>
-Europe &amp; Central Asia (IDA &amp; IBRD)
-</td>
-
-<td>
-TEC
-</td>
-
-<td>
-T7
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-EUU
-</td>
-
-<td>
-European Union
-</td>
-
-<td>
-EUU
-</td>
-
-<td>
-EU
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-FRO
-</td>
-
-<td>
-Faroe Islands
-</td>
-
-<td>
-FRO
-</td>
-
-<td>
-FO
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-FJI
-</td>
-
-<td>
-Fiji
-</td>
-
-<td>
-FJI
-</td>
-
-<td>
-FJ
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-FIN
-</td>
-
-<td>
-Finland
-</td>
-
-<td>
-FIN
-</td>
-
-<td>
-FI
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-FCS
-</td>
-
-<td>
-Fragile and conflict affected situations
-</td>
-
-<td>
-FCS
-</td>
-
-<td>
-F1
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-FRA
-</td>
-
-<td>
-France
-</td>
-
-<td>
-FRA
-</td>
-
-<td>
-FR
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PYF
-</td>
-
-<td>
-French Polynesia
-</td>
-
-<td>
-PYF
-</td>
-
-<td>
-PF
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GAB
-</td>
-
-<td>
-Gabon
-</td>
-
-<td>
-GAB
-</td>
-
-<td>
-GA
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GEO
-</td>
-
-<td>
-Georgia
-</td>
-
-<td>
-GEO
-</td>
-
-<td>
-GE
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DEU
-</td>
-
-<td>
-Germany
-</td>
-
-<td>
-DEU
-</td>
-
-<td>
-DE
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GHA
-</td>
-
-<td>
-Ghana
-</td>
-
-<td>
-GHA
-</td>
-
-<td>
-GH
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GIB
-</td>
-
-<td>
-Gibraltar
-</td>
-
-<td>
-GIB
-</td>
-
-<td>
-GI
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GRC
-</td>
-
-<td>
-Greece
-</td>
-
-<td>
-GRC
-</td>
-
-<td>
-GR
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GRL
-</td>
-
-<td>
-Greenland
-</td>
-
-<td>
-GRL
-</td>
-
-<td>
-GL
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GRD
-</td>
-
-<td>
-Grenada
-</td>
-
-<td>
-GRD
-</td>
-
-<td>
-GD
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GUM
-</td>
-
-<td>
-Guam
-</td>
-
-<td>
-GUM
-</td>
-
-<td>
-GU
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GTM
-</td>
-
-<td>
-Guatemala
-</td>
-
-<td>
-GTM
-</td>
-
-<td>
-GT
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GIN
-</td>
-
-<td>
-Guinea
-</td>
-
-<td>
-GIN
-</td>
-
-<td>
-GN
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GNB
-</td>
-
-<td>
-Guinea-Bissau
-</td>
-
-<td>
-GNB
-</td>
-
-<td>
-GW
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GUY
-</td>
-
-<td>
-Guyana
-</td>
-
-<td>
-GUY
-</td>
-
-<td>
-GY
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-HTI
-</td>
-
-<td>
-Haiti
-</td>
-
-<td>
-HTI
-</td>
-
-<td>
-HT
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-HPC
-</td>
-
-<td>
-Heavily indebted poor countries (HIPC)
-</td>
-
-<td>
-HPC
-</td>
-
-<td>
-XE
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-HIC
-</td>
-
-<td>
-High income
-</td>
-
-<td>
-HIC
-</td>
-
-<td>
-XD
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-HND
-</td>
-
-<td>
-Honduras
-</td>
-
-<td>
-HND
-</td>
-
-<td>
-HN
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-HKG
-</td>
-
-<td>
-Hong Kong SAR, China
-</td>
-
-<td>
-HKG
-</td>
-
-<td>
-HK
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-HUN
-</td>
-
-<td>
-Hungary
-</td>
-
-<td>
-HUN
-</td>
-
-<td>
-HU
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IBD
-</td>
-
-<td>
-IBRD only
-</td>
-
-<td>
-IBD
-</td>
-
-<td>
-XF
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ISL
-</td>
-
-<td>
-Iceland
-</td>
-
-<td>
-ISL
-</td>
-
-<td>
-IS
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IBT
-</td>
-
-<td>
-IDA &amp; IBRD total
-</td>
-
-<td>
-IBT
-</td>
-
-<td>
-ZT
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IDB
-</td>
-
-<td>
-IDA blend
-</td>
-
-<td>
-IDB
-</td>
-
-<td>
-XH
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IDX
-</td>
-
-<td>
-IDA only
-</td>
-
-<td>
-IDX
-</td>
-
-<td>
-XI
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IDA
-</td>
-
-<td>
-IDA total
-</td>
-
-<td>
-IDA
-</td>
-
-<td>
-XG
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IND
-</td>
-
-<td>
-India
-</td>
-
-<td>
-IND
-</td>
-
-<td>
-IN
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IDN
-</td>
-
-<td>
-Indonesia
-</td>
-
-<td>
-IDN
-</td>
-
-<td>
-ID
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IRN
-</td>
-
-<td>
-Iran
-</td>
-
-<td>
-IRN
-</td>
-
-<td>
-IR
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IRQ
-</td>
-
-<td>
-Iraq
-</td>
-
-<td>
-IRQ
-</td>
-
-<td>
-IQ
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IRL
-</td>
-
-<td>
-Ireland
-</td>
-
-<td>
-IRL
-</td>
-
-<td>
-IE
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IMN
-</td>
-
-<td>
-Isle of Man
-</td>
-
-<td>
-IMN
-</td>
-
-<td>
-IM
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ISR
-</td>
-
-<td>
-Israel
-</td>
-
-<td>
-ISR
-</td>
-
-<td>
-IL
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ITA
-</td>
-
-<td>
-Italy
-</td>
-
-<td>
-ITA
-</td>
-
-<td>
-IT
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-JAM
-</td>
-
-<td>
-Jamaica
-</td>
-
-<td>
-JAM
-</td>
-
-<td>
-JM
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-JPN
-</td>
-
-<td>
-Japan
-</td>
-
-<td>
-JPN
-</td>
-
-<td>
-JP
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-JOR
-</td>
-
-<td>
-Jordan
-</td>
-
-<td>
-JOR
-</td>
-
-<td>
-JO
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KAZ
-</td>
-
-<td>
-Kazakhstan
-</td>
-
-<td>
-KAZ
-</td>
-
-<td>
-KZ
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KEN
-</td>
-
-<td>
-Kenya
-</td>
-
-<td>
-KEN
-</td>
-
-<td>
-KE
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KIR
-</td>
-
-<td>
-Kiribati
-</td>
-
-<td>
-KIR
-</td>
-
-<td>
-KI
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KOR
-</td>
-
-<td>
-Korea
-</td>
-
-<td>
-KOR
-</td>
-
-<td>
-KR
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-XKX
-</td>
-
-<td>
-Kosovo
-</td>
-
-<td>
-XKX
-</td>
-
-<td>
-XK
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KWT
-</td>
-
-<td>
-Kuwait
-</td>
-
-<td>
-KWT
-</td>
-
-<td>
-KW
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KGZ
-</td>
-
-<td>
-Kyrgyz Republic
-</td>
-
-<td>
-KGZ
-</td>
-
-<td>
-KG
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LAO
-</td>
-
-<td>
-Lao PDR
-</td>
-
-<td>
-LAO
-</td>
-
-<td>
-LA
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LTE
-</td>
-
-<td>
-Late-demographic dividend
-</td>
-
-<td>
-LTE
-</td>
-
-<td>
-V3
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LCN
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-LCN
-</td>
-
-<td>
-ZJ
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LAC
-</td>
-
-<td>
-Latin America &amp; Caribbean (excluding high income)
-</td>
-
-<td>
-LAC
-</td>
-
-<td>
-XJ
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TLA
-</td>
-
-<td>
-Latin America &amp; Caribbean (IDA &amp; IBRD)
-</td>
-
-<td>
-TLA
-</td>
-
-<td>
-T2
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LVA
-</td>
-
-<td>
-Latvia
-</td>
-
-<td>
-LVA
-</td>
-
-<td>
-LV
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LDC
-</td>
-
-<td>
-Least developed countries: UN classification
-</td>
-
-<td>
-LDC
-</td>
-
-<td>
-XL
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LBN
-</td>
-
-<td>
-Lebanon
-</td>
-
-<td>
-LBN
-</td>
-
-<td>
-LB
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LSO
-</td>
-
-<td>
-Lesotho
-</td>
-
-<td>
-LSO
-</td>
-
-<td>
-LS
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LBR
-</td>
-
-<td>
-Liberia
-</td>
-
-<td>
-LBR
-</td>
-
-<td>
-LR
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LBY
-</td>
-
-<td>
-Libya
-</td>
-
-<td>
-LBY
-</td>
-
-<td>
-LY
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LIE
-</td>
-
-<td>
-Liechtenstein
-</td>
-
-<td>
-LIE
-</td>
-
-<td>
-LI
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LTU
-</td>
-
-<td>
-Lithuania
-</td>
-
-<td>
-LTU
-</td>
-
-<td>
-LT
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LMY
-</td>
-
-<td>
-Low &amp; middle income
-</td>
-
-<td>
-LMY
-</td>
-
-<td>
-XO
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LIC
-</td>
-
-<td>
-Low income
-</td>
-
-<td>
-LIC
-</td>
-
-<td>
-XM
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LMC
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-LMC
-</td>
-
-<td>
-XN
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LUX
-</td>
-
-<td>
-Luxembourg
-</td>
-
-<td>
-LUX
-</td>
-
-<td>
-LU
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MAC
-</td>
-
-<td>
-Macao SAR, China
-</td>
-
-<td>
-MAC
-</td>
-
-<td>
-MO
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MDG
-</td>
-
-<td>
-Madagascar
-</td>
-
-<td>
-MDG
-</td>
-
-<td>
-MG
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MWI
-</td>
-
-<td>
-Malawi
-</td>
-
-<td>
-MWI
-</td>
-
-<td>
-MW
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MYS
-</td>
-
-<td>
-Malaysia
-</td>
-
-<td>
-MYS
-</td>
-
-<td>
-MY
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MDV
-</td>
-
-<td>
-Maldives
-</td>
-
-<td>
-MDV
-</td>
-
-<td>
-MV
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MLI
-</td>
-
-<td>
-Mali
-</td>
-
-<td>
-MLI
-</td>
-
-<td>
-ML
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MLT
-</td>
-
-<td>
-Malta
-</td>
-
-<td>
-MLT
-</td>
-
-<td>
-MT
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MHL
-</td>
-
-<td>
-Marshall Islands
-</td>
-
-<td>
-MHL
-</td>
-
-<td>
-MH
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MRT
-</td>
-
-<td>
-Mauritania
-</td>
-
-<td>
-MRT
-</td>
-
-<td>
-MR
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MUS
-</td>
-
-<td>
-Mauritius
-</td>
-
-<td>
-MUS
-</td>
-
-<td>
-MU
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MEX
-</td>
-
-<td>
-Mexico
-</td>
-
-<td>
-MEX
-</td>
-
-<td>
-MX
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-FSM
-</td>
-
-<td>
-Micronesia
-</td>
-
-<td>
-FSM
-</td>
-
-<td>
-FM
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MEA
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-MEA
-</td>
-
-<td>
-ZQ
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MNA
-</td>
-
-<td>
-Middle East &amp; North Africa (excluding high income)
-</td>
-
-<td>
-MNA
-</td>
-
-<td>
-XQ
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TMN
-</td>
-
-<td>
-Middle East &amp; North Africa (IDA &amp; IBRD)
-</td>
-
-<td>
-TMN
-</td>
-
-<td>
-T3
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MIC
-</td>
-
-<td>
-Middle income
-</td>
-
-<td>
-MIC
-</td>
-
-<td>
-XP
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MDA
-</td>
-
-<td>
-Moldova
-</td>
-
-<td>
-MDA
-</td>
-
-<td>
-MD
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MCO
-</td>
-
-<td>
-Monaco
-</td>
-
-<td>
-MCO
-</td>
-
-<td>
-MC
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MNG
-</td>
-
-<td>
-Mongolia
-</td>
-
-<td>
-MNG
-</td>
-
-<td>
-MN
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MNE
-</td>
-
-<td>
-Montenegro
-</td>
-
-<td>
-MNE
-</td>
-
-<td>
-ME
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MAR
-</td>
-
-<td>
-Morocco
-</td>
-
-<td>
-MAR
-</td>
-
-<td>
-MA
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MOZ
-</td>
-
-<td>
-Mozambique
-</td>
-
-<td>
-MOZ
-</td>
-
-<td>
-MZ
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MMR
-</td>
-
-<td>
-Myanmar
-</td>
-
-<td>
-MMR
-</td>
-
-<td>
-MM
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NRU
-</td>
-
-<td>
-Nauru
-</td>
-
-<td>
-NRU
-</td>
-
-<td>
-NR
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NPL
-</td>
-
-<td>
-Nepal
-</td>
-
-<td>
-NPL
-</td>
-
-<td>
-NP
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NLD
-</td>
-
-<td>
-Netherlands
-</td>
-
-<td>
-NLD
-</td>
-
-<td>
-NL
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NCL
-</td>
-
-<td>
-New Caledonia
-</td>
-
-<td>
-NCL
-</td>
-
-<td>
-NC
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NZL
-</td>
-
-<td>
-New Zealand
-</td>
-
-<td>
-NZL
-</td>
-
-<td>
-NZ
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NIC
-</td>
-
-<td>
-Nicaragua
-</td>
-
-<td>
-NIC
-</td>
-
-<td>
-NI
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NER
-</td>
-
-<td>
-Niger
-</td>
-
-<td>
-NER
-</td>
-
-<td>
-NE
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NGA
-</td>
-
-<td>
-Nigeria
-</td>
-
-<td>
-NGA
-</td>
-
-<td>
-NG
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NAC
-</td>
-
-<td>
-North America
-</td>
-
-<td>
-NAC
-</td>
-
-<td>
-XU
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MKD
-</td>
-
-<td>
-North Macedonia
-</td>
-
-<td>
-MKD
-</td>
-
-<td>
-MK
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MNP
-</td>
-
-<td>
-Northern Mariana Islands
-</td>
-
-<td>
-MNP
-</td>
-
-<td>
-MP
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NOR
-</td>
-
-<td>
-Norway
-</td>
-
-<td>
-NOR
-</td>
-
-<td>
-NO
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-OED
-</td>
-
-<td>
-OECD members
-</td>
-
-<td>
-OED
-</td>
-
-<td>
-OE
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-OMN
-</td>
-
-<td>
-Oman
-</td>
-
-<td>
-OMN
-</td>
-
-<td>
-OM
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-OSS
-</td>
-
-<td>
-Other small states
-</td>
-
-<td>
-OSS
-</td>
-
-<td>
-S4
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PSS
-</td>
-
-<td>
-Pacific island small states
-</td>
-
-<td>
-PSS
-</td>
-
-<td>
-S2
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PAK
-</td>
-
-<td>
-Pakistan
-</td>
-
-<td>
-PAK
-</td>
-
-<td>
-PK
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PLW
-</td>
-
-<td>
-Palau
-</td>
-
-<td>
-PLW
-</td>
-
-<td>
-PW
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PAN
-</td>
-
-<td>
-Panama
-</td>
-
-<td>
-PAN
-</td>
-
-<td>
-PA
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PNG
-</td>
-
-<td>
-Papua New Guinea
-</td>
-
-<td>
-PNG
-</td>
-
-<td>
-PG
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PRY
-</td>
-
-<td>
-Paraguay
-</td>
-
-<td>
-PRY
-</td>
-
-<td>
-PY
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PER
-</td>
-
-<td>
-Peru
-</td>
-
-<td>
-PER
-</td>
-
-<td>
-PE
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PHL
-</td>
-
-<td>
-Philippines
-</td>
-
-<td>
-PHL
-</td>
-
-<td>
-PH
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-POL
-</td>
-
-<td>
-Poland
-</td>
-
-<td>
-POL
-</td>
-
-<td>
-PL
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PRT
-</td>
-
-<td>
-Portugal
-</td>
-
-<td>
-PRT
-</td>
-
-<td>
-PT
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PST
-</td>
-
-<td>
-Post-demographic dividend
-</td>
-
-<td>
-PST
-</td>
-
-<td>
-V4
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PRE
-</td>
-
-<td>
-Pre-demographic dividend
-</td>
-
-<td>
-PRE
-</td>
-
-<td>
-V1
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PRI
-</td>
-
-<td>
-Puerto Rico
-</td>
-
-<td>
-PRI
-</td>
-
-<td>
-PR
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-QAT
-</td>
-
-<td>
-Qatar
-</td>
-
-<td>
-QAT
-</td>
-
-<td>
-QA
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ROU
-</td>
-
-<td>
-Romania
-</td>
-
-<td>
-ROU
-</td>
-
-<td>
-RO
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-RUS
-</td>
-
-<td>
-Russia
-</td>
-
-<td>
-RUS
-</td>
-
-<td>
-RU
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-RWA
-</td>
-
-<td>
-Rwanda
-</td>
-
-<td>
-RWA
-</td>
-
-<td>
-RW
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-WSM
-</td>
-
-<td>
-Samoa
-</td>
-
-<td>
-WSM
-</td>
-
-<td>
-WS
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SMR
-</td>
-
-<td>
-San Marino
-</td>
-
-<td>
-SMR
-</td>
-
-<td>
-SM
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-STP
-</td>
-
-<td>
-São Tomé and Principe
-</td>
-
-<td>
-STP
-</td>
-
-<td>
-ST
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SAU
-</td>
-
-<td>
-Saudi Arabia
-</td>
-
-<td>
-SAU
-</td>
-
-<td>
-SA
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SEN
-</td>
-
-<td>
-Senegal
-</td>
-
-<td>
-SEN
-</td>
-
-<td>
-SN
 </td>
 
 <td>
@@ -10418,7 +5122,7 @@ Serbia
 </td>
 
 <td>
-SRB
+RS
 </td>
 
 <td>
@@ -10434,774 +5138,6 @@ Europe &amp; Central Asia
 <tr>
 
 <td>
-SYC
-</td>
-
-<td>
-Seychelles
-</td>
-
-<td>
-SYC
-</td>
-
-<td>
-SC
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SLE
-</td>
-
-<td>
-Sierra Leone
-</td>
-
-<td>
-SLE
-</td>
-
-<td>
-SL
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SGP
-</td>
-
-<td>
-Singapore
-</td>
-
-<td>
-SGP
-</td>
-
-<td>
-SG
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SXM
-</td>
-
-<td>
-Sint Maarten (Dutch part)
-</td>
-
-<td>
-SXM
-</td>
-
-<td>
-SX
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SVK
-</td>
-
-<td>
-Slovak Republic
-</td>
-
-<td>
-SVK
-</td>
-
-<td>
-SK
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SVN
-</td>
-
-<td>
-Slovenia
-</td>
-
-<td>
-SVN
-</td>
-
-<td>
-SI
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SST
-</td>
-
-<td>
-Small states
-</td>
-
-<td>
-SST
-</td>
-
-<td>
-S1
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SLB
-</td>
-
-<td>
-Solomon Islands
-</td>
-
-<td>
-SLB
-</td>
-
-<td>
-SB
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SOM
-</td>
-
-<td>
-Somalia
-</td>
-
-<td>
-SOM
-</td>
-
-<td>
-SO
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ZAF
-</td>
-
-<td>
-South Africa
-</td>
-
-<td>
-ZAF
-</td>
-
-<td>
-ZA
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SAS
-</td>
-
-<td>
-South Asia
-</td>
-
-<td>
-SAS
-</td>
-
-<td>
-8S
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TSA
-</td>
-
-<td>
-South Asia (IDA &amp; IBRD)
-</td>
-
-<td>
-TSA
-</td>
-
-<td>
-T5
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SSD
-</td>
-
-<td>
-South Sudan
-</td>
-
-<td>
-SSD
-</td>
-
-<td>
-SS
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ESP
-</td>
-
-<td>
-Spain
-</td>
-
-<td>
-ESP
-</td>
-
-<td>
-ES
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LKA
-</td>
-
-<td>
-Sri Lanka
-</td>
-
-<td>
-LKA
-</td>
-
-<td>
-LK
-</td>
-
-<td>
-South Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KNA
-</td>
-
-<td>
-St. Kitts and Nevis
-</td>
-
-<td>
-KNA
-</td>
-
-<td>
-KN
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LCA
-</td>
-
-<td>
-St. Lucia
-</td>
-
-<td>
-LCA
-</td>
-
-<td>
-LC
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MAF
-</td>
-
-<td>
-St. Martin (French part)
-</td>
-
-<td>
-MAF
-</td>
-
-<td>
-MF
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-VCT
-</td>
-
-<td>
-St. Vincent and the Grenadines
-</td>
-
-<td>
-VCT
-</td>
-
-<td>
-VC
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SSF
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-SSF
-</td>
-
-<td>
-ZG
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SSA
-</td>
-
-<td>
-Sub-Saharan Africa (excluding high income)
-</td>
-
-<td>
-SSA
-</td>
-
-<td>
-ZF
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TSS
-</td>
-
-<td>
-Sub-Saharan Africa (IDA &amp; IBRD)
-</td>
-
-<td>
-TSS
-</td>
-
-<td>
-T6
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SDN
-</td>
-
-<td>
-Sudan
-</td>
-
-<td>
-SDN
-</td>
-
-<td>
-SD
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SUR
-</td>
-
-<td>
-Suriname
-</td>
-
-<td>
-SUR
-</td>
-
-<td>
-SR
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SWE
-</td>
-
-<td>
-Sweden
-</td>
-
-<td>
-SWE
-</td>
-
-<td>
-SE
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CHE
-</td>
-
-<td>
-Switzerland
-</td>
-
-<td>
-CHE
-</td>
-
-<td>
-CH
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SYR
-</td>
-
-<td>
-Syrian Arab Republic
-</td>
-
-<td>
-SYR
-</td>
-
-<td>
-SY
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TJK
-</td>
-
-<td>
-Tajikistan
-</td>
-
-<td>
-TJK
-</td>
-
-<td>
-TJ
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TZA
-</td>
-
-<td>
-Tanzania
-</td>
-
-<td>
-TZA
-</td>
-
-<td>
-TZ
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-THA
-</td>
-
-<td>
-Thailand
-</td>
-
-<td>
-THA
-</td>
-
-<td>
-TH
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BHS
-</td>
-
-<td>
-The Bahamas
-</td>
-
-<td>
-BHS
-</td>
-
-<td>
-BS
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GMB
-</td>
-
-<td>
-The Gambia
-</td>
-
-<td>
-GMB
-</td>
-
-<td>
-GM
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 TLS
 </td>
 
@@ -11210,7 +5146,7 @@ Timor-Leste
 </td>
 
 <td>
-TLS
+TL
 </td>
 
 <td>
@@ -11226,486 +5162,6 @@ East Asia &amp; Pacific
 <tr>
 
 <td>
-TGO
-</td>
-
-<td>
-Togo
-</td>
-
-<td>
-TGO
-</td>
-
-<td>
-TG
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TON
-</td>
-
-<td>
-Tonga
-</td>
-
-<td>
-TON
-</td>
-
-<td>
-TO
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TTO
-</td>
-
-<td>
-Trinidad and Tobago
-</td>
-
-<td>
-TTO
-</td>
-
-<td>
-TT
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TUN
-</td>
-
-<td>
-Tunisia
-</td>
-
-<td>
-TUN
-</td>
-
-<td>
-TN
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TUR
-</td>
-
-<td>
-Türkiye
-</td>
-
-<td>
-TUR
-</td>
-
-<td>
-TR
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TKM
-</td>
-
-<td>
-Turkmenistan
-</td>
-
-<td>
-TKM
-</td>
-
-<td>
-TM
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TCA
-</td>
-
-<td>
-Turks and Caicos Islands
-</td>
-
-<td>
-TCA
-</td>
-
-<td>
-TC
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TUV
-</td>
-
-<td>
-Tuvalu
-</td>
-
-<td>
-TUV
-</td>
-
-<td>
-TV
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-UGA
-</td>
-
-<td>
-Uganda
-</td>
-
-<td>
-UGA
-</td>
-
-<td>
-UG
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-UKR
-</td>
-
-<td>
-Ukraine
-</td>
-
-<td>
-UKR
-</td>
-
-<td>
-UA
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ARE
-</td>
-
-<td>
-United Arab Emirates
-</td>
-
-<td>
-ARE
-</td>
-
-<td>
-AE
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GBR
-</td>
-
-<td>
-United Kingdom
-</td>
-
-<td>
-GBR
-</td>
-
-<td>
-GB
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-USA
-</td>
-
-<td>
-United States
-</td>
-
-<td>
-USA
-</td>
-
-<td>
-US
-</td>
-
-<td>
-North America
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-UMC
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-UMC
-</td>
-
-<td>
-XT
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-URY
-</td>
-
-<td>
-Uruguay
-</td>
-
-<td>
-URY
-</td>
-
-<td>
-UY
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-UZB
-</td>
-
-<td>
-Uzbekistan
-</td>
-
-<td>
-UZB
-</td>
-
-<td>
-UZ
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-VUT
-</td>
-
-<td>
-Vanuatu
-</td>
-
-<td>
-VUT
-</td>
-
-<td>
-VU
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-VEN
-</td>
-
-<td>
-Venezuela
-</td>
-
-<td>
-VEN
-</td>
-
-<td>
-VE
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-VNM
-</td>
-
-<td>
-Viet Nam
-</td>
-
-<td>
-VNM
-</td>
-
-<td>
-VN
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-VIR
-</td>
-
-<td>
-Virgin Islands
-</td>
-
-<td>
-VIR
-</td>
-
-<td>
-VI
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 PSE
 </td>
 
@@ -11714,7 +5170,7 @@ West Bank and Gaza
 </td>
 
 <td>
-PSE
+PS
 </td>
 
 <td>
@@ -11730,30 +5186,6 @@ Middle East &amp; North Africa
 <tr>
 
 <td>
-WLD
-</td>
-
-<td>
-World
-</td>
-
-<td>
-WLD
-</td>
-
-<td>
-1W
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 YEM
 </td>
 
@@ -11762,7 +5194,7 @@ Yemen
 </td>
 
 <td>
-YEM
+YE
 </td>
 
 <td>
@@ -11776,56 +5208,8 @@ Middle East &amp; North Africa
 </tr>
 
 <tr>
-
-<td>
-ZMB
-</td>
-
-<td>
-Zambia
-</td>
-
-<td>
-ZMB
-</td>
-
-<td>
-ZM
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ZWE
-</td>
-
-<td>
-Zimbabwe
-</td>
-
-<td>
-ZWE
-</td>
-
-<td>
-ZW
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-</tr>
-
-<tr>
 <td colspan="5" style="text-align: left;">
-Total Rows: 264, Total Columns: 5
+Total Rows: 5, Total Columns: 5
 </td>
 </tr>
 </tbody>
@@ -11836,7 +5220,7 @@ Total Rows: 264, Total Columns: 5
 </section>
 <section id="task-11" class="level2">
 <h2 class="anchored" data-anchor-id="task-11">Task 11</h2>
-<div id="13d98db8" class="cell" data-execution_count="13">
+<div id="5c32a4c5" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Now, let&#39;s investigate the &quot;income category&quot; field.</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">## List the income categories and the number of countries in each</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">## income category in descending order of most countries to least.</span></span>
@@ -11942,7 +5326,7 @@ Total Rows: 5, Total Columns: 2
 </section>
 <section id="task-12" class="level2">
 <h2 class="anchored" data-anchor-id="task-12">Task 12</h2>
-<div id="b92b2000" class="cell" data-execution_count="14">
+<div id="af1765b6" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Mystery task.  Looking at the table from Task 11 (anything odd?) write the</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">## next obvious query based on the results in the table.</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">## At a minimum, your query should put country short name in the first column.</span></span>
@@ -11950,11 +5334,16 @@ Total Rows: 5, Total Columns: 2
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">## in the first column.</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT `Short Name`, `Income Group`</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">FROM wdi_country</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Income Group` = &#39;&#39;</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY `Short Name`;</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">  `Short Name` AS &quot;Country&quot;, </span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">  `Income Group`</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">  wdi_country</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE </span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">  `Short Name` = &#39;Venezuela&#39;</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="st">  `Short Name`;</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <table class="dataframe table table-sm table-striped small">
 
@@ -11963,7 +5352,7 @@ Total Rows: 5, Total Columns: 2
 <tr>
 
 <th>
-Short Name
+Country
 </th>
 
 <th>
@@ -11979,10 +5368,11 @@ Income Group
 <tr>
 
 <td>
-no records returned
+Venezuela
 </td>
 
 <td>
+NULL
 </td>
 
 </tr>
@@ -12000,29 +5390,28 @@ Total Rows: 1, Total Columns: 2
 </section>
 <section id="task-13" class="level2">
 <h2 class="anchored" data-anchor-id="task-13">Task 13</h2>
-<div id="2bfd6632" class="cell" data-execution_count="15">
+<div id="b15a0fd0" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">## OK, this HAS to be an error. Let&#39;s make a assumption that the country </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">## in question, because they are oil-rich, are &quot;high income&quot;.  </span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Write an update comment to correct the issue.</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">## </span><span class="al">NOTE</span><span class="co"> - if you get this wrong, all subsequent tables will be wrong!</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>execute_ddl(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="st">-- Example: Suppose it was &quot;South Sudan&quot;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="st">-- Fix Venezuela&#39;s missing income group classification</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="st">UPDATE wdi_country</span></span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="st">SET `Income Group` = &#39;High income&#39;</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Short Name` = &#39;South Sudan&#39;;</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Short Name` = &#39;Venezuela&#39;;</span></span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="st">-- Verify</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="st">-- Verify the fix</span></span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT `Short Name`, `Income Group`</span></span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="st">FROM wdi_country</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Short Name` = &#39;South Sudan&#39;;</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE `Short Name` = &#39;Venezuela&#39;;</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="task-14" class="level2">
 <h2 class="anchored" data-anchor-id="task-14">Task 14</h2>
-<div id="c71c1d1e" class="cell" data-execution_count="16">
+<div id="4882ab75" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Write a single query that show the number of countries in each </span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">## &quot;Region&quot;-&quot;Income Group&quot; pair.  The table should have 3 columns:</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">## region, income group, and no.of.countries.</span></span>
@@ -12035,11 +5424,13 @@ Total Rows: 1, Total Columns: 2
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="st">  COUNT(*) AS &quot;Country Count&quot;</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="st">  wdi_country</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY </span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`, `Income Group`</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`, `Income Group`;</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE </span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY </span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`, `Income Group`</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`, `Income Group`;</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <table class="dataframe table table-sm table-striped small">
 
@@ -12064,22 +5455,6 @@ Country Count
 </thead>
 
 <tbody>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-48
-</td>
-
-</tr>
 
 <tr>
 
@@ -12189,22 +5564,6 @@ Upper middle income
 
 <td>
 15
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-1
 </td>
 
 </tr>
@@ -12451,7 +5810,7 @@ Upper middle income
 
 <tr>
 <td colspan="3" style="text-align: left;">
-Total Rows: 24, Total Columns: 3
+Total Rows: 22, Total Columns: 3
 </td>
 </tr>
 </tbody>
@@ -12462,7 +5821,7 @@ Total Rows: 24, Total Columns: 3
 </section>
 <section id="task-15" class="level2">
 <h2 class="anchored" data-anchor-id="task-15">Task 15</h2>
-<div id="f5cb4297" class="cell" data-execution_count="17">
+<div id="16d9c141" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Examine the result from task 14. It would be really cool to</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">## present the results of this table in a 2-D form, with </span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">## columns for each income category (high, upper middle, lower middle, low, other)</span></span>
@@ -12482,15 +5841,17 @@ Total Rows: 24, Total Columns: 3
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="st">  SUM(CASE WHEN `Income Group` = &#39;Upper middle income&#39; THEN 1 ELSE 0 END) AS Upper_Middle,</span></span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="st">  SUM(CASE WHEN `Income Group` = &#39;Lower middle income&#39; THEN 1 ELSE 0 END) AS Lower_Middle,</span></span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="st">  SUM(CASE WHEN `Income Group` = &#39;Low income&#39; THEN 1 ELSE 0 END) AS Low_Income,</span></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="st">  SUM(CASE WHEN `Income Group` NOT IN (&#39;High income&#39;, &#39;Upper middle income&#39;, &#39;Lower middle income&#39;, &#39;Low income&#39;) OR `Income Group` IS NULL THEN 1 ELSE 0 END) AS Other,</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="st">  SUM(CASE WHEN `Income Group` NOT IN (&#39;High income&#39;, &#39;Upper middle income&#39;, &#39;Lower middle income&#39;, &#39;Low income&#39;) THEN 1 ELSE 0 END) AS Other,</span></span>
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="st">  COUNT(*) AS Total</span></span>
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
 <span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a><span class="st">  wdi_country</span></span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY </span></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`</span></span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`;</span></span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE </span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY </span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`;</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <table class="dataframe table table-sm table-striped small">
 
@@ -12531,38 +5892,6 @@ Total
 </thead>
 
 <tbody>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-0.0
-</td>
-
-<td>
-0.0
-</td>
-
-<td>
-0.0
-</td>
-
-<td>
-0.0
-</td>
-
-<td>
-48.0
-</td>
-
-<td>
-48
-</td>
-
-</tr>
 
 <tr>
 
@@ -12651,11 +5980,11 @@ Latin America &amp; Caribbean
 </td>
 
 <td>
-1.0
+0.0
 </td>
 
 <td>
-42
+41
 </td>
 
 </tr>
@@ -12790,7 +6119,7 @@ Sub-Saharan Africa
 
 <tr>
 <td colspan="7" style="text-align: left;">
-Total Rows: 8, Total Columns: 7
+Total Rows: 7, Total Columns: 7
 </td>
 </tr>
 </tbody>
@@ -12801,7 +6130,7 @@ Total Rows: 8, Total Columns: 7
 </section>
 <section id="task-16" class="level2">
 <h2 class="anchored" data-anchor-id="task-16">Task 16</h2>
-<div id="b55513be" class="cell" data-execution_count="18">
+<div id="002afab8" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Wow! what a cool table!  It is very interesting to see where the money</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">## sits around the world.  Using the general approach from Task 14 above</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">## and write a query to return the single region with the most lower-income</span></span>
@@ -12882,7 +6211,7 @@ Total Rows: 1, Total Columns: 3
 </section>
 <section id="task-17" class="level2">
 <h2 class="anchored" data-anchor-id="task-17">Task 17</h2>
-<div id="4040c346" class="cell" data-execution_count="19">
+<div id="a441eda2" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Are you getting the hand of this? Good! We need to take a look at all</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">## the countries in the same region and with the same income category as</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">## the Marshall Islands.</span></span>
@@ -13132,7 +6461,7 @@ Total Rows: 9, Total Columns: 4
 </section>
 <section id="task-18" class="level2">
 <h2 class="anchored" data-anchor-id="task-18">Task 18</h2>
-<div id="04d66c94" class="cell" data-execution_count="20">
+<div id="d5c9c8da" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## OK - let&#39;s raise the heat in the kitchen! Review the output from task 14.</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">## You&#39;ll see that some of the regions do not contain all of the income</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">## levels.  For example, the Europe &amp; Central Asia region does not have</span></span>
@@ -13150,22 +6479,42 @@ Total Rows: 9, Total Columns: 4
 <span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where, subqueries, joins)</span></span>
 <span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="st">-- First, get all combinations</span></span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT * </span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="st">FROM (</span></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT DISTINCT `Region` FROM wdi_country</span></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="st">) AS r</span></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="st">CROSS JOIN (</span></span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT DISTINCT `Income Group` FROM wdi_country</span></span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="st">) AS i</span></span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE NOT EXISTS (</span></span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT 1</span></span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM wdi_country wc</span></span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE wc.`Region` = r.`Region`</span></span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="st">    AND wc.`Income Group` = i.`Income Group`</span></span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY r.`Region`, i.`Income Group`;</span></span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="st">-- Step 1: Get all valid combinations (region × income group)</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="st">WITH all_combinations AS (</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT </span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="st">    r.`Region`, </span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="st">    i.`Income Group`</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM </span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="st">    (SELECT DISTINCT `Region` FROM wdi_country WHERE `Region` IS NOT NULL) r</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="st">  CROSS JOIN </span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="st">    (SELECT DISTINCT `Income Group` FROM wdi_country WHERE `Income Group` IS NOT NULL) i</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="st">-- Step 2: Get actual combinations from data</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="st">existing_combinations AS (</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT DISTINCT </span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="st">    `Region`, </span></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="st">    `Income Group`</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM </span></span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="st">    wdi_country</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE </span></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="st">    `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a><span class="st">-- Step 3: Find missing ones</span></span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a><span class="st">  a.`Region`, </span></span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="st">  a.`Income Group`</span></span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a><span class="st">  all_combinations a</span></span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN </span></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a><span class="st">  existing_combinations e</span></span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a><span class="st">  ON a.`Region` = e.`Region` AND a.`Income Group` = e.`Income Group`</span></span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE </span></span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a><span class="st">  e.`Region` IS NULL</span></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a><span class="st">  a.`Region`, a.`Income Group`;</span></span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <table class="dataframe table table-sm table-striped small">
 
@@ -13190,90 +6539,6 @@ Income Group
 <tr>
 
 <td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-High income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-Low income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-Lower middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 Europe &amp; Central Asia
 </td>
 
@@ -13290,43 +6555,7 @@ Latin America &amp; Caribbean
 </td>
 
 <td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
 Low income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-North America
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
@@ -13374,38 +6603,14 @@ South Asia
 </td>
 
 <td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-South Asia
-</td>
-
-<td>
 High income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
 
 <tr>
 <td colspan="2" style="text-align: left;">
-Total Rows: 18, Total Columns: 2
+Total Rows: 6, Total Columns: 2
 </td>
 </tr>
 </tbody>
@@ -13416,7 +6621,7 @@ Total Rows: 18, Total Columns: 2
 </section>
 <section id="task-19" class="level2">
 <h2 class="anchored" data-anchor-id="task-19">Task 19</h2>
-<div id="4ff08080" class="cell" data-execution_count="21">
+<div id="0ea7f44e" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Hot enough, yet?  Let&#39;s go for ghost-pepper HOT!  Now let&#39;s build some</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">## percentage tables.  For example, across the entire sample, what</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">## is the percentage of total countries in each income category?</span></span>
@@ -13433,27 +6638,28 @@ Total Rows: 18, Total Columns: 2
 <span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where, subqueries, joins, aggregate functions)</span></span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="st">WITH base AS (</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="st">WITH counts AS (</span></span>
 <span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT </span></span>
 <span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="st">    `Region`, </span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="st">    `Income Group`,</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="st">    `Income Group`, </span></span>
 <span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="st">    COUNT(*) AS country_count</span></span>
 <span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM wdi_country</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="st">  GROUP BY `Region`, `Income Group`</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="st">totals AS (</span></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT </span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="st">    SUM(country_count) AS total_countries</span></span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM base</span></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="st">  b.`Region`,</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="st">  b.`Income Group`,</span></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="st">  b.country_count,</span></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="st">  (b.country_count * 100.0 / t.total_countries) AS percent_of_total</span></span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a><span class="st">FROM base b, totals t</span></span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY b.`Region`, b.`Income Group`;</span></span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="st">  GROUP BY `Region`, `Income Group`</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="st">totals AS (</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT COUNT(*) AS total_count</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM wdi_country</span></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="st">  c.`Region`, </span></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="st">  c.`Income Group`, </span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="st">  c.country_count,</span></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(c.country_count * 100.0 / t.total_count, 2) AS percent_of_total</span></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a><span class="st">FROM counts c, totals t</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY c.`Region`, c.`Income Group`;</span></span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <table class="dataframe table table-sm table-striped small">
 
@@ -13486,26 +6692,6 @@ percent_of_total
 <tr>
 
 <td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-48
-</td>
-
-<td>
-18.11321
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 East Asia &amp; Pacific
 </td>
 
@@ -13518,7 +6704,7 @@ High income
 </td>
 
 <td>
-5.66038
+6.94
 </td>
 
 </tr>
@@ -13538,7 +6724,7 @@ Low income
 </td>
 
 <td>
-0.37736
+0.46
 </td>
 
 </tr>
@@ -13558,7 +6744,7 @@ Lower middle income
 </td>
 
 <td>
-4.52830
+5.56
 </td>
 
 </tr>
@@ -13578,7 +6764,7 @@ Upper middle income
 </td>
 
 <td>
-3.39623
+4.17
 </td>
 
 </tr>
@@ -13598,7 +6784,7 @@ High income
 </td>
 
 <td>
-15.09434
+18.52
 </td>
 
 </tr>
@@ -13618,7 +6804,7 @@ Lower middle income
 </td>
 
 <td>
-1.13208
+1.39
 </td>
 
 </tr>
@@ -13638,27 +6824,7 @@ Upper middle income
 </td>
 
 <td>
-5.66038
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-1
-</td>
-
-<td>
-0.37736
+6.94
 </td>
 
 </tr>
@@ -13678,7 +6844,7 @@ High income
 </td>
 
 <td>
-6.79245
+8.33
 </td>
 
 </tr>
@@ -13698,7 +6864,7 @@ Lower middle income
 </td>
 
 <td>
-1.50943
+1.85
 </td>
 
 </tr>
@@ -13718,7 +6884,7 @@ Upper middle income
 </td>
 
 <td>
-7.16981
+8.80
 </td>
 
 </tr>
@@ -13738,7 +6904,7 @@ High income
 </td>
 
 <td>
-3.01887
+3.70
 </td>
 
 </tr>
@@ -13758,7 +6924,7 @@ Low income
 </td>
 
 <td>
-0.75472
+0.93
 </td>
 
 </tr>
@@ -13778,7 +6944,7 @@ Lower middle income
 </td>
 
 <td>
-2.64151
+3.24
 </td>
 
 </tr>
@@ -13798,7 +6964,7 @@ Upper middle income
 </td>
 
 <td>
-1.50943
+1.85
 </td>
 
 </tr>
@@ -13818,7 +6984,7 @@ High income
 </td>
 
 <td>
-1.13208
+1.39
 </td>
 
 </tr>
@@ -13838,7 +7004,7 @@ Low income
 </td>
 
 <td>
-0.37736
+0.46
 </td>
 
 </tr>
@@ -13858,7 +7024,7 @@ Lower middle income
 </td>
 
 <td>
-2.26415
+2.78
 </td>
 
 </tr>
@@ -13878,7 +7044,7 @@ Upper middle income
 </td>
 
 <td>
-0.37736
+0.46
 </td>
 
 </tr>
@@ -13898,7 +7064,7 @@ High income
 </td>
 
 <td>
-0.37736
+0.46
 </td>
 
 </tr>
@@ -13918,7 +7084,7 @@ Low income
 </td>
 
 <td>
-8.30189
+10.19
 </td>
 
 </tr>
@@ -13938,7 +7104,7 @@ Lower middle income
 </td>
 
 <td>
-7.16981
+8.80
 </td>
 
 </tr>
@@ -13958,14 +7124,14 @@ Upper middle income
 </td>
 
 <td>
-2.26415
+2.78
 </td>
 
 </tr>
 
 <tr>
 <td colspan="4" style="text-align: left;">
-Total Rows: 24, Total Columns: 4
+Total Rows: 22, Total Columns: 4
 </td>
 </tr>
 </tbody>
@@ -13976,7 +7142,7 @@ Total Rows: 24, Total Columns: 4
 </section>
 <section id="task-20" class="level2">
 <h2 class="anchored" data-anchor-id="task-20">Task 20</h2>
-<div id="66937e01" class="cell" data-execution_count="22">
+<div id="9072b68c" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">## SLAM DUNK TIME!  Using the resulting table CTEs from Task 19,</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">## print table similar to the table in Task 15, with Income group in the</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">## columns, Region in the rows and Percent of total in each cell of the table.</span></span>
@@ -13984,28 +7150,28 @@ Total Rows: 24, Total Columns: 4
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="st">WITH counts AS (</span></span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT </span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="st">    `Region`,</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="st">    `Income Group`,</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="st">    `Region`, </span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="st">    `Income Group`, </span></span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="st">    COUNT(*) AS country_count</span></span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM wdi_country</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="st">  GROUP BY `Region`, `Income Group`</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="st">totals AS (</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT SUM(country_count) AS total FROM counts</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`,</span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN `Income Group` = &#39;High income&#39; THEN country_count END) * 100.0 / total, 2) AS High_Income,</span></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN `Income Group` = &#39;Upper middle income&#39; THEN country_count END) * 100.0 / total, 2) AS Upper_Middle,</span></span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN `Income Group` = &#39;Lower middle income&#39; THEN country_count END) * 100.0 / total, 2) AS Lower_Middle,</span></span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN `Income Group` = &#39;Low income&#39; THEN country_count END) * 100.0 / total, 2) AS Low_Income,</span></span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN `Income Group` NOT IN (&#39;High income&#39;,&#39;Upper middle income&#39;,&#39;Lower middle income&#39;,&#39;Low income&#39;) OR `Income Group` IS NULL THEN country_count END) * 100.0 / total, 2) AS Other</span></span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="st">  counts, totals</span></span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY </span></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`</span></span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="st">  `Region`;</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="st">  GROUP BY `Region`, `Income Group`</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="st">totals AS (</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT COUNT(*) AS total</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM wdi_country</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="st">  c.`Region`,</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN c.`Income Group` = &#39;High income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS High_Income,</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN c.`Income Group` = &#39;Upper middle income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Upper_Middle,</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN c.`Income Group` = &#39;Lower middle income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Lower_Middle,</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN c.`Income Group` = &#39;Low income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Low_Income,</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(SUM(CASE WHEN c.`Income Group` NOT IN (&#39;High income&#39;, &#39;Upper middle income&#39;, &#39;Lower middle income&#39;, &#39;Low income&#39;) THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Other</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="st">FROM counts c, totals t</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY c.`Region`</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY c.`Region`;</span></span>
 <span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <table class="dataframe table table-sm table-striped small">
@@ -14035,7 +7201,7 @@ OperationalError
 </td>
 
 <td>
-Operational Error: (pymysql.err.OperationalError) (1055, “Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column &#39;totals.total&#39; which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by”)\n[SQL: \nWITH counts AS (\n SELECT \n <code>Region</code>,\n <code>Income Group</code>,\n COUNT(<em>) AS country_count\n FROM wdi_country\n GROUP BY <code>Region</code>, <code>Income Group</code>\n),\ntotals AS (\n SELECT SUM(country_count) AS total FROM counts\n)\nSELECT \n <code>Region</code>,\n ROUND(SUM(CASE WHEN <code>Income Group</code> = &#39;High income&#39; THEN country_count END) </em> 100.0 / total, 2) AS High_Income,\n ROUND(SUM(CASE WHEN <code>Income Group</code> = &#39;Upper middle income&#39; THEN country_count END) * 100.0 / total, 2) AS Upper_Middle,\n ROUND(SUM(CASE WHEN <code>Income Group</code> = &#39;Lower middle income&#39; THEN country_count END) * 100.0 / total, 2) AS Lower_Middle,\n ROUND(SUM(CASE WHEN <code>Income Group</code> = &#39;Low income&#39; THEN country_count END) * 100.0 / total, 2) AS Low_Income,\n ROUND(SUM(CASE WHEN <code>Income Group</code> NOT IN (&#39;High income&#39;,&#39;Upper middle income&#39;,&#39;Lower middle income&#39;,&#39;Low income&#39;) OR <code>Income Group</code> IS NULL THEN country_count END) * 100.0 / total, 2) AS Other\nFROM \n counts, totals\nGROUP BY \n <code>Region</code>\nORDER BY \n <code>Region</code>;\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Operational Error: (pymysql.err.OperationalError) (1055, “Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column &#39;t.total&#39; which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by”)\n[SQL: \nWITH counts AS (\n SELECT \n <code>Region</code>, \n <code>Income Group</code>, \n COUNT(<em>) AS country_count\n FROM wdi_country\n WHERE <code>Region</code> IS NOT NULL AND <code>Income Group</code> IS NOT NULL\n GROUP BY <code>Region</code>, <code>Income Group</code>\n),\ntotals AS (\n SELECT COUNT(</em>) AS total\n FROM wdi_country\n WHERE <code>Region</code> IS NOT NULL AND <code>Income Group</code> IS NOT NULL\n)\nSELECT \n c.<code>Region</code>,\n ROUND(SUM(CASE WHEN c.<code>Income Group</code> = &#39;High income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS High_Income,\n ROUND(SUM(CASE WHEN c.<code>Income Group</code> = &#39;Upper middle income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Upper_Middle,\n ROUND(SUM(CASE WHEN c.<code>Income Group</code> = &#39;Lower middle income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Lower_Middle,\n ROUND(SUM(CASE WHEN c.<code>Income Group</code> = &#39;Low income&#39; THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Low_Income,\n ROUND(SUM(CASE WHEN c.<code>Income Group</code> NOT IN (&#39;High income&#39;, &#39;Upper middle income&#39;, &#39;Lower middle income&#39;, &#39;Low income&#39;) THEN c.country_count ELSE 0 END) * 100.0 / t.total, 2) AS Other\nFROM counts c, totals t\nGROUP BY c.<code>Region</code>\nORDER BY c.<code>Region</code>;\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)
 </td>
 
 </tr>
@@ -14053,7 +7219,7 @@ Total Rows: 1, Total Columns: 2
 </section>
 <section id="task-21" class="level2">
 <h2 class="anchored" data-anchor-id="task-21">Task 21</h2>
-<div id="5fb01a17" class="cell" data-execution_count="23">
+<div id="3a5785ec" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">## ANOTHER DUNK!  Using the resulting table CTEs from Task 19,</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">## print a table listing the number, totals and percentage of countries</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">## by income category.</span></span>
@@ -14063,24 +7229,26 @@ Total Rows: 1, Total Columns: 2
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="st">WITH group_counts AS (</span></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT </span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="st">    `Income Group`,</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="st">    `Income Group`, </span></span>
 <span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="st">    COUNT(*) AS country_count</span></span>
 <span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM wdi_country</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="st">  GROUP BY `Income Group`</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="st">total AS (</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT SUM(country_count) AS total FROM group_counts</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="st">  g.`Income Group`,</span></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="st">  g.country_count,</span></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="st">  t.total,</span></span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(g.country_count * 100.0 / t.total, 2) AS percent_of_total</span></span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="st">  group_counts g, total t</span></span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY </span></span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="st">  g.country_count DESC;</span></span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="st">  GROUP BY `Income Group`</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="st">),</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="st">total_count AS (</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT COUNT(*) AS total</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM wdi_country</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT </span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="st">  g.`Income Group`,</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="st">  g.country_count,</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="st">  t.total,</span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="st">  ROUND(g.country_count * 100.0 / t.total, 2) AS percent_of_total</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="st">FROM </span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="st">  group_counts g, total_count t</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY g.country_count DESC;</span></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <table class="dataframe table table-sm table-striped small">
 
@@ -14121,11 +7289,11 @@ High income
 </td>
 
 <td>
-265.0
+216
 </td>
 
 <td>
-32.08
+39.35
 </td>
 
 </tr>
@@ -14141,11 +7309,11 @@ Upper middle income
 </td>
 
 <td>
-265.0
+216
 </td>
 
 <td>
-20.38
+25.00
 </td>
 
 </tr>
@@ -14161,31 +7329,11 @@ Lower middle income
 </td>
 
 <td>
-265.0
+216
 </td>
 
 <td>
-19.25
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NULL
-</td>
-
-<td>
-49
-</td>
-
-<td>
-265.0
-</td>
-
-<td>
-18.49
+23.61
 </td>
 
 </tr>
@@ -14201,18 +7349,18 @@ Low income
 </td>
 
 <td>
-265.0
+216
 </td>
 
 <td>
-9.81
+12.04
 </td>
 
 </tr>
 
 <tr>
 <td colspan="4" style="text-align: left;">
-Total Rows: 5, Total Columns: 4
+Total Rows: 4, Total Columns: 4
 </td>
 </tr>
 </tbody>
