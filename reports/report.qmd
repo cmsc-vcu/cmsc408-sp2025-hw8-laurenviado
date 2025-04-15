@@ -107,18 +107,19 @@ Create your own copy of WDI_Country containing just countries.
 ## of records in the new table.
 ## (skills: select, aggregate)
 
-# drop table
+# Drop and recreate clean table with only real countries
 execute_ddl(cnx, """
-DROP TABLE IF EXISTS wdi_country;
+DROP TABLE IF EXISTS wdi_country_clean;
 
-CREATE TABLE wdi_country AS
+CREATE TABLE wdi_country_clean AS
 SELECT *
 FROM world_bank_data.wdi_country
-WHERE `Region` IS NOT NULL AND `Income Group` IS NOT NULL;
+WHERE `Region` IS NOT NULL;
+COMMIT;
 """)
 
-# count new rows 
-run_sql_and_return_html(cnx,"""
+# Count number of countries to verify (should be 217)
+run_sql_and_return_html(cnx, """
 SELECT COUNT(*) AS "Number of Countries"
 FROM wdi_country;
 """)
@@ -640,26 +641,17 @@ ORDER BY i.`Income Group`;
 
 1. Reflect on the SQL skills you used throughout these exercises. Which skills do you feel most confident in, and which do you think need more practice? How has this assignment helped you build or reinforce specific SQL competencies?
 
-( response goes here)
+This assignment helped me reinforce core SQL skills like `SELECT`, `WHERE`, `GROUP BY`, and `HAVING`. I'm most confident in writing filtered queries and summarizing data. I also practiced creating new tables using `CREATE TABLE AS` and using subqueries for percentages. I’d like more practice with CTEs and pivot-style queries.
 
 2. Problem-Solving Approach: Describe your approach to tackling the more complex tasks (like Tasks 18, 23, and 24). How did you break down these problems, and what steps did you take when you encountered challenges? How would you approach a similar problem differently in the future?
 
-( response goes here)
-
+For complex tasks like Tasks 18, 23, and 24, I broke the problem down into smaller parts and built queries step-by-step. When something didn’t work, I debugged by checking each part individually and comparing outputs to earlier tasks. In the future, I’ll plan out table relationships earlier to save time.
 
 3. Learning Takeaways: Consider the overall learning experience from this assignment. What were the biggest takeaways about working with SQL for data analysis and transformation? How do you think these skills will apply in real-world scenarios or future coursework?
 
-( response goes here)
-
+I learned how SQL can be used to clean and reshape messy data, not just query it. Tasks involving percentages and missing values felt like real-world reporting problems. These skills will be helpful in future coursework and projects that involve data analysis or dashboards.
 
 # README
-
-A quality README is an important part of EVERY project. Using the Quarto *include* command we're including a copy of your README in the project report so that a human can evaluate it.
-
-Make sure that you edit the README so that it's explanatory!  Note that you don't need a readme within the *reports* folder for this assignment. We're only
-focused on the root *README.md*.
-
-[Here is some info](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/) on how to write a good README!
 
 ::: {style="background:lightgray; margin-left:20px; border-top: 3px solid black; border-bottom: 3px solid black; padding-left:20px; padding-right:20px"}
 {{< include ../README.md >}}
